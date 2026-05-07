@@ -17,7 +17,7 @@ module.exports = async function handler(req, res) {
     prompt = `Fitness expert. Muscles worked by: "${text}". Use ONLY: chest,front-delts,side-delts,rear-delts,traps,lats,upper-back,lower-back,biceps,triceps,forearms,abs,obliques,quads,hamstrings,glutes,calves,hip-flexors. Return ONLY valid JSON: {"front":["muscle1"],"back":["muscle2"]}`;
   } else if (type === 'coach') {
     prompt = text;
-    maxTokens = 2000;
+    maxTokens = 4000;
   } else {
     return res.status(400).json({ error: 'Invalid type' });
   }
