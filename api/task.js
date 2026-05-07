@@ -32,7 +32,7 @@ Output format (follow exactly):
         'anthropic-version': '2023-06-01'
       },
       body: JSON.stringify({
-        model: 'claude-3-5-haiku-20241022',
+        model: 'claude-haiku-4-5-20251001',
         max_tokens: 600,
         system,
         messages: [{ role: 'user', content: `Andrew's data:\n${context}\n\nWhat is his single most important task right now?` }]
