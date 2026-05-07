@@ -12,7 +12,7 @@ module.exports = async function handler(req, res) {
   let maxTokens = 500;
 
   if (type === 'nutrition') {
-    prompt = `Nutrition analyst. User described food they ate. Make best estimate based on typical portions. Always return numbers even for vague descriptions. Return ONLY valid JSON, no markdown, no explanation: {"calories":number,"protein":number,"carbs":number,"fats":number,"fiber":number,"summary":"one sentence"}\n\nFood: ${text}`;
+    prompt = `Nutrition analyst. User described food they ate. Make best estimate based on typical portions. Always return numbers. Return ONLY valid JSON, no markdown: {"calories":number,"protein":number,"carbs":number,"fats":number,"fiber":number,"summary":"one sentence"}\n\nFood: ${text}`;
   } else if (type === 'muscle') {
     prompt = `Fitness expert. Muscles worked by: "${text}". Use ONLY: chest,front-delts,side-delts,rear-delts,traps,lats,upper-back,lower-back,biceps,triceps,forearms,abs,obliques,quads,hamstrings,glutes,calves,hip-flexors. Return ONLY valid JSON: {"front":["muscle1"],"back":["muscle2"]}`;
   } else if (type === 'coach') {
